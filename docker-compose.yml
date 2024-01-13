@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  runner:
+    image: runner-image
+    #container_name: runner 
+    deploy:
+      mode: replicated
+      replicas: 2
+      placement:
+        constraints:
+          - node.role == worker
+    environment:
+      - ORGANIZATION=$GHORH
+      - ACCESS_TOKEN=$GHPAT
+      - REPO=$REPO
+      - OWNER=$OWNER
+  # --env ORGANIZATION=$GHORG \
+  # --env ACCESS_TOKEN=$GHPAT \
+  # --env REPO=$REPO \
+  # --env OWNER=$OWNER \
