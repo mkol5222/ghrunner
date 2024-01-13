@@ -21,3 +21,11 @@ docker-compose scale runner=3
 docker-compose logs -ft
   ```
 
+Expects .env similar to:
+```shell
+GHORG=yourorg
+GHPAT=ghp_xyz
+REPO=somerepo
+OWNER=youruser
+```
+
