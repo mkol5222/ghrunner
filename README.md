@@ -19,6 +19,12 @@ docker rm runner
 docker-compose up -d
 docker-compose scale runner=3
 docker-compose logs -ft
+
+docker-compose down
+
+docker build --tag runner-image .
+docker-compose up -d --force-recreate
+
   ```
 
 Expects .env similar to:

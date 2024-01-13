@@ -11,7 +11,7 @@ services:
         constraints:
           - node.role == worker
     environment:
-      - ORGANIZATION=$GHORH
+      - ORGANIZATION=$GHORG
       - ACCESS_TOKEN=$GHPAT
       - REPO=$REPO
       - OWNER=$OWNER
