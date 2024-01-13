@@ -28,6 +28,14 @@ RUN echo "docker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh
 
 # copy over the start.sh script
+COPY install-pwsh-direct.sh install-pwsh.sh
+
+# make the script executable
+RUN chmod +x install-pwsh.sh
+
+RUN ./install-pwsh.sh
+
+# copy over the start.sh script
 COPY start.sh start.sh
 
 # make the script executable
